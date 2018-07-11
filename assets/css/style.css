@@ -1,12 +1,31 @@
-body{
-    background-image: url("../images/background.jpeg");
+
+.jumbotron {
+    background-image: url("../images/jumbotronBackground.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+    color: white;
+    border-radius: 10px;
 }
 
+body {
+    background-image: url("../images/bodyBackground.jpeg");
+    background-size: cover;
+}
+
+.instructions {
+    background-color: grey;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 35px;
+}
 
 h1 {
-    font-size: 45px;
+    font-size: 50px;
     width: 100%;
     text-align: center;
+    margin-top: 65px;
+    
 }
 
 #computerDiv {
@@ -14,6 +33,7 @@ h1 {
     float: left;
     text-align: center;
     font-size: 32px;
+    color: white;
 }
 
 #userDiv {
@@ -21,12 +41,13 @@ h1 {
     float: left;
     text-align: center;
     font-size: 32px;
-
+    color: white;
 }
 
 #jewelDiv {
     width: 100%;
     text-align: center;
+    margin-top: 30px;
 }
 
 
@@ -38,15 +59,16 @@ img {
 }
 
 #winsDiv {
-    width: 50%;
-    float: left;
     text-align: center;
     font-size: 32px;
+    color: white;
+    margin-bottom: 15px;
 }
 
 #lossesDiv {
-    width: 50%;
-    float: left;
     text-align: center;
     font-size: 32px;
+    margin-bottom: 40px;
+    color: white;
 }
+

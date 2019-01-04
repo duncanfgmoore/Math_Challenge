@@ -1,82 +1,60 @@
-
-
-
-
 $(document).ready(function() {
+  // set up variables
+  var computerNumber = Math.floor(Math.random() * 101 + 19);
+  var userGuess = 0;
+  var wins = 0;
+  var losses = 0;
 
+  gameReset();
 
-// set up variables
-var computerNumber = Math.floor(Math.random() * 101 + 19);
-var userGuess = 0;
-var wins = 0;
-var losses = 0;
-
-
-
-
-
-
-gameReset()
-
-
-// make function that restart game and stats
-
-function gameReset () {
+  // make function that restart game and stats
+  function gameReset() {
     userGuess = 0;
     computerNumber = Math.floor(Math.random() * 101 + 19);
     $("#computerNumber").text(computerNumber);
- 
-    
 
-    $('div#jewelDiv img').each(function() {
-        randNum = Math.floor(Math.random() * 11 + 1);
-        $(this).attr("crystalNum", randNum);
-
-    })
+    $("div#jewelDiv img").each(function() {
+      randNum = Math.floor(Math.random() * 11 + 1);
+      $(this).attr("crystalNum", randNum);
+    });
 
     $("#userGuess").text(userGuess);
-};
+  }
 
-//function for if the user gets the same number
-function sameNumber() {
+  //function for if the user gets the same number
+  function sameNumber() {
     if (userGuess === computerNumber) {
-        alert("You Win!");
-        wins++;
-        $("#wins").text(wins);
-        gameReset();
+      alert("You Win!");
+      wins++;
+      $("#wins").text(wins);
+      gameReset();
     }
-}
+  }
 
-
-//function for if the user goes over the computer number
-function differentNumber() {
+  //function for if the user goes over the computer number
+  function differentNumber() {
     if (userGuess > computerNumber) {
-        alert("You Lose!");
-        losses++;
-        $("#losses").text(losses);
-        gameReset();
+      alert("You Lose!");
+      losses++;
+      $("#losses").text(losses);
+      gameReset();
     }
-}
+  }
 
+  $("div#jewelDiv img").on("click", function() {
+    crystalNumber = $(this).attr("crystalNum");
 
-$('div#jewelDiv img').on ('click', function(){
-    crystalNumber = $(this).attr('crystalNum')
-    
-    userGuess = parseInt(userGuess)
-    userGuess += parseInt(crystalNumber); // userGuess = userGuess + parseInt(crystalNumber)
+    userGuess = parseInt(userGuess);
+    userGuess += parseInt(crystalNumber); 
 
     $("#userGuess").text(userGuess);
 
     if (userGuess === computerNumber) {
-        sameNumber();
-    } 
-    
-    if (userGuess > computerNumber) {
-        differentNumber();
+      sameNumber();
     }
 
-})
-
-
-
+    if (userGuess > computerNumber) {
+      differentNumber();
+    }
+  });
 });

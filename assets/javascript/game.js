@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  // set up variables
   var computerNumber = Math.floor(Math.random() * 101 + 19);
   var userGuess = 0;
   var wins = 0;
@@ -7,7 +6,6 @@ $(document).ready(function() {
 
   gameReset();
 
-  // make function that restart game and stats
   function gameReset() {
     userGuess = 0;
     computerNumber = Math.floor(Math.random() * 101 + 19);
@@ -45,7 +43,7 @@ $(document).ready(function() {
     crystalNumber = $(this).attr("crystalNum");
 
     userGuess = parseInt(userGuess);
-    userGuess += parseInt(crystalNumber); 
+    userGuess += parseInt(crystalNumber);
 
     $("#userGuess").text(userGuess);
 
